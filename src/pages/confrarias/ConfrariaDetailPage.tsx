@@ -7,13 +7,13 @@ import { Badge } from '@/components/ui/Badge'
 import { PageSpinner } from '@/components/ui/Spinner'
 import { CONFRARIA_PRIVACY_LABELS, MEMBER_ROLE_LABELS } from '@/types'
 import { formatDateTime, formatCount } from '@/lib/utils'
-import { useAuth } from '@/hooks/useAuth'
+// import { useAuth } from '@/hooks/useAuth'
 
 type Tab = 'membros' | 'eventos'
 
 export default function ConfrariaDetailPage() {
   const { slug } = useParams<{ slug: string }>()
-  const { user } = useAuth()
+  // const { user } = useAuth()
   const { data: confraria, isLoading } = useConfraria(slug ?? '')
   const { data: members = [] } = useConfrariaMembers(confraria?.id ?? '')
   const { data: events = [] } = useConfrariaEvents(confraria?.id ?? '')
@@ -24,7 +24,7 @@ export default function ConfrariaDetailPage() {
   if (!confraria) return <div className="p-4 text-white/50">Confraria não encontrada</div>
 
   const isMember = !!confraria.user_role
-  const isAdmin = confraria.user_role === 'admin' || confraria.owner_id === user?.id
+  // const isAdmin = confraria.user_role === 'admin' || confraria.owner_id === user?.id
 
   return (
     <div className="flex flex-col">

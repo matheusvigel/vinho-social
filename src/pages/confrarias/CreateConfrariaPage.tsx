@@ -7,7 +7,7 @@ import { Input, Textarea } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 import { ROUTES, routeTo } from '@/constants/routes'
 import type { ConfriariaPrivacy } from '@/types'
-import { CONFRARIA_PRIVACY_LABELS } from '@/types'
+// import { CONFRARIA_PRIVACY_LABELS } from '@/types'
 
 const schema = z.object({
   name: z.string().min(3, 'Mínimo 3 caracteres').max(100),

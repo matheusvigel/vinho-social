@@ -26,7 +26,7 @@ async function fetchProfileByUsername(username: string): Promise<Profile | null>
 
 export default function ProfilePage() {
   const { username } = useParams<{ username: string }>()
-  const { user, profile: myProfile } = useAuth()
+  const { user } = useAuth()
 
   const { data: profile, isLoading } = useQuery({
     queryKey: queryKeys.profile(username ?? ''),

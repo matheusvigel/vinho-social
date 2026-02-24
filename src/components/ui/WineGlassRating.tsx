@@ -26,7 +26,7 @@ function WineGlassSVG({
   isHovered: boolean
   size: 'sm' | 'md' | 'lg'
 }) {
-  const id = `clip-${Math.random().toString(36).slice(2)}`
+
 
   return (
     <svg

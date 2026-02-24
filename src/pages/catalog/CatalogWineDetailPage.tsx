@@ -4,7 +4,7 @@ import { WineTypeBadge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { PageSpinner } from '@/components/ui/Spinner'
 import { ROUTES } from '@/constants/routes'
-import { WINE_TYPE_LABELS } from '@/types'
+// import { WINE_TYPE_LABELS } from '@/types'
 
 export default function CatalogWineDetailPage() {
   const { id } = useParams<{ id: string }>()
