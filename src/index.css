@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-dark-300 text-white font-sans;
+    overscroll-behavior: none;
+  }
+
+  /* Safe area para dispositivos com notch */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@layer utilities {
+  /* Scrollbar escondida */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Seleção personalizada */
+  ::selection {
+    @apply bg-wine-800 text-white;
+  }
+
+  /* Select element dark styling */
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 2.5rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  select:focus {
+    @apply border-gold-500/50 ring-1 ring-gold-500/30;
+  }
+
+  select option {
+    @apply bg-surface text-white;
+  }
+
+  /* Checkbox e radio customizados */
+  input[type='checkbox'],
+  input[type='radio'] {
+    @apply accent-gold-500;
+  }
+
+  /* Focus ring global acessível */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-500/70 ring-offset-1 ring-offset-dark-300;
+  }
+
+  /* Linha divisória premium */
+  .divider-premium {
+    @apply border-t border-white/5;
+  }
+}
